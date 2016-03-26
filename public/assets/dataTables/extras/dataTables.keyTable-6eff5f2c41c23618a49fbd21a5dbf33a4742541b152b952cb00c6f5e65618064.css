@@ -1,0 +1,6 @@
+/* line 3, /Users/samirakarakulahian/.rvm/gems/ruby-2.3.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets/dataTables/extras/dataTables.keyTable.scss */
+table.KeyTable th.focus,
+table.KeyTable td.focus {
+  outline: 3px solid #3366FF;
+  outline-offset: -3px;
+}

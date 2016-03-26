@@ -1,0 +1,15 @@
+/*
+ * Namespace DTCR - "DataTables ColReorder" plug-in
+ */
+/* line 6, /Users/samirakarakulahian/.rvm/gems/ruby-2.3.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets/dataTables/extras/dataTables.colReorder.scss */
+table.DTCR_clonedTable {
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 202;
+}
+
+/* line 11, /Users/samirakarakulahian/.rvm/gems/ruby-2.3.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets/dataTables/extras/dataTables.colReorder.scss */
+div.DTCR_pointer {
+  width: 1px;
+  background-color: #0259C4;
+  z-index: 201;
+}

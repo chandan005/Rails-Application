@@ -1,0 +1,26 @@
+<% provide(:title, "Edit Plantation") %>
+
+<h1> Update your plantation</h1>
+
+<div class = "row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for @plantation, :url => {:action => 'update', :id => @plantation} do |f| %>
+			<%= render 'shared/error_messages' %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control' %>
+
+			<%= f.label :location %>
+			<%= f.text_field :location, class: 'form-control' %>
+
+			<%= f.submit "Save changes", class: "btn btn-success" %>
+		<% end %>
+
+		<hr />
+
+		<%= link_to "Cancel", {:action => 'list'}, class: "btn btn-danger btn-block" %>
+		<br />
+		<%= link_to "Main Page", {:controller => 'main', :action => 'index'}, class: "btn btn-primary btn-block"%>
+	</div>
+</div>
+

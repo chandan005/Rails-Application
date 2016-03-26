@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plantation_id: 
+  name: MyString
+  variety: MyString
+  color: MyString
+  time: 1
+
+two:
+  plantation_id: 
+  name: MyString
+  variety: MyString
+  color: MyString
+  time: 1

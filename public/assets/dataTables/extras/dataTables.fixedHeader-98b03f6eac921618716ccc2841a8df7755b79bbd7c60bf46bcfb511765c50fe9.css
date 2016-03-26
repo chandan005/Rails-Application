@@ -1,0 +1,5 @@
+/* line 3, /Users/samirakarakulahian/.rvm/gems/ruby-2.3.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets/dataTables/extras/dataTables.fixedHeader.scss */
+div.FixedHeader_Cloned th,
+div.FixedHeader_Cloned td {
+  background-color: white !important;
+}

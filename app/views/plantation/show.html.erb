@@ -1,0 +1,93 @@
+<% provide(:title, @plantation.name) %>
+
+<h1><%= @plantation.name %></h1>
+<h3 style ="text-align: center;"> Fruits List</h3>
+
+
+
+<div>
+	<table style ="width:100%;" id ="plantation_list">
+		<thead>
+			<tr>
+				<th>S.N.</th>
+				<th>Name</th>
+				<th>Variety</th>
+				<th>Color</th>
+				<th>Plantation Name</th>
+				<th>Plantation Location</th>
+				<th>Created At</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<% @fruits.each do |c| %>
+				<td>  </td>
+				<td><%= c.name %></td>
+				<td><%= c.variety %></td>
+				<td><%= c.color %></td>
+				<td><%= link_to @plantation.name%></td>
+				<td><%= @plantation.location %>
+				<td><%= c.created_at %></td>
+				<td>
+				<%= link_to "Edit", fruit_edit_path(:fruit_id => c.id)%> |
+				<%= link_to "Delete", fruit_destroy_path(:fruit_id => c.id), data: {confirm: "Are you sure, you want to delete this item?."} %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<div>
+	<br />
+	<hr />
+	<br />
+	<table style ="width:100%;" id ="plantation_veggie_list">
+		<thead>
+			<tr>
+				<th>S.N.</th>
+				<th>Name</th>
+				<th>Variety</th>
+				<th>Color</th>
+				<th>Time</th>
+				<th>Plantation Name</th>
+				<th>Plantation Location</th>
+				<th>Created At</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<% @vegetables.each do |v| %>
+				<td></td>
+				<td><%= v.name %></td>
+				<td><%= v.variety %></td>
+				<td><%= v.color %></td>
+				<td><%= v.time %></td>
+				<td><%= @plantation.name%></td>
+				<td><%= @plantation.location %>
+				<td><%= v.created_at %></td>
+				<td>
+				<%= link_to "Edit", vegetable_edit_path(:vegetable_id => v.id)%> |
+				<%= link_to "Delete", vegetable_destroy_path(:vegetable_id => v.id), data: {confirm: "Are you sure, you want to delete this item?."} %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+
+<div class ="row">
+	<div class ="col-sm-6 col-md-offset-3">
+		<hr />
+		<%= link_to "Add new fruit", {:controller => 'fruit', :action => 'new'}, class: "btn btn-primary btn-block"%>
+		<%= link_to "Add new Vegetable", {:controller => 'vegetable', :action => 'new'}, class: "btn btn-primary btn-block"%>
+		<%= link_to "Main Page", {:controller => 'main', :action => 'index'}, class: "btn btn-primary btn-block"%>
+	</div>
+</div>
+
+
+
+
+

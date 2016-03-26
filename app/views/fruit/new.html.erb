@@ -1,0 +1,32 @@
+<% provide(:title, "Create Fruit") %>
+
+<h1> Add new Fruit </h1>
+
+<div class ="row">
+	<div class ="col-md-6 col-md-offset-3">
+		<%= form_for @fruit, :url => {:action => 'create', :id => @fruit} do |f| %>
+			<%= render 'shared/error_messages_fruit' %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control' %>
+
+			<%= f.label :variety %>
+			<%= f.text_field :variety, class: 'form-control' %>
+
+			<%= f.label :color %>
+			<%= f.text_field :color, class: 'form-control' %>
+
+			<%= f.label :plantation_name %>
+			<%= f.collection_select :plantation_id, @plantations, :id, :name, prompt: true, class: 'form-control' %>
+
+			<%= f.submit "Create Fruit", class: "btn btn-success" %>
+		<% end %>
+
+		<hr />
+
+		<%= link_to "Cancel", {:action => 'list'}, class: "btn btn-danger btn-block" %>
+		<br />
+		<%= link_to "Main Page", {:controller => 'main', :action => 'index'}, class: "btn btn-primary btn-block"%>
+
+	</div>
+</div>

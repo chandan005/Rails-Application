@@ -1,0 +1,35 @@
+<% provide(:title, "Edit Vegetable") %>
+
+<h1> Update your vegetable</h1>
+
+<div class = "row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for @vegetable, :url => {:action => 'update', :id => @vegetable} do |v| %>
+			<%= render 'shared/error_messages_vege' %>
+
+			<%= v.label :name %>
+			<%= v.text_field :name, class: 'form-control' %>
+
+			<%= v.label :variety %>
+			<%= v.text_field :variety, class: 'form-control' %>
+
+			<%= v.label :color %>
+			<%= v.text_field :color, class: 'form-control' %>
+
+			<%= v.label :time %>
+			<%= v.text_field :time, class: 'form-control' %>
+
+			<%= v.label :plantation_name %>
+			<%= v.collection_select :plantation_id, Plantation.all, :id, :name, class: 'form-control' %>
+
+			<%= v.submit "Save changes", class: "btn btn-success" %>
+		<% end %>
+
+		<hr />
+
+		<%= link_to "Cancel", {:action => 'list'}, class: "btn btn-danger btn-block" %>
+		<br />
+		<%= link_to "Main Page", {:controller => 'main', :action => 'index'}, class: "btn btn-primary btn-block"%>
+	</div>
+</div>
+

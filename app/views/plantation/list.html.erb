@@ -1,0 +1,43 @@
+<% provide(:title, "All Plantations")%>
+
+<% if @plantations.blank? %>
+<h4> There isn't any plantation currently in the system. </h4>
+<% else %>
+<h4> All Plantations </h4>
+
+<div>
+	<table id ="plantation_list">
+		<thead>
+			<tr>
+				<th>S.N.</th>
+				<th>Name</th>
+				<th>Location</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<% @plantations.each do |p| %>
+				<td> <%= p.id %> </td>
+				<td><%= link_to p.name, {:action => 'show', :id => p.id} %></td>
+				<td><%= p.location %></td>
+				<td width ="15%"><%= link_to "Show", {:action => 'show', :id => p.id}%> |
+				<%= link_to "Edit", {:action => 'edit', :id => p.id}%> |
+				<%= link_to "Delete", {:action => 'destroy', :id => p.id}, data: {confirm: "Are you sure, you want to delete this item?. It will also delete the fruit and vegetable records."} %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<% end %>
+<div class ="row">
+	<div class ="col-sm-6 col-md-offset-3">
+		<hr />
+		<%= link_to "Add new plantation", {:controller => 'plantation', :action => 'new'}, class: "btn btn-primary btn-block"%>
+		<br />
+		<%= link_to "Main Page", {:controller => 'main', :action => 'index'}, class: "btn btn-primary btn-block"%>
+	</div>
+</div>
+
+
