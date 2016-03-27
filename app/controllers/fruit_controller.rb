@@ -1,22 +1,22 @@
 class FruitController < ApplicationController
 
+	#Lists all the fruits
 	def list()
 		@fruits = Fruit.all
 	end
 
-	def show()
-		@fruit = Fruit.find(params[:id])
-	end
-
+	# Creates a new Fruit
 	def new()
 		@fruit = Fruit.new
 		@plantations = Plantation.all
 	end
 
+	# Fetches fruit's properties
 	def fruit_params()
 		params.require(:fruit).permit(:name, :variety, :color, :plantation_id)
 	end
 
+	# Implements the new method and creates
 	def create()
 		@fruit = Fruit.new(fruit_params)
 
@@ -28,13 +28,13 @@ class FruitController < ApplicationController
 		end
 	end
 
+	# Gets id to edit
 	def edit()
 		@fruit = Fruit.find(params[:fruit_id]) || (params[:id])
 		@plantations = Plantation.all
 	end
 
-
-
+	# Implements the edit method
 	def update()
 		@fruit = Fruit.find(params[:id])
 
@@ -46,13 +46,11 @@ class FruitController < ApplicationController
 		end
 	end
 
+	# Deletes the fruit
 	def destroy()
 		Fruit.find((params[:fruit_id]) || (params[:id])).destroy
 		redirect_to :action => 'list'
 	end
 
-	def show_plantations()
-		@plantation = Plantation.find(params[:id])
-	end
 
 end

@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get 'plantation/destroy'
 
   get 'fruit/list'
-  get 'fruit/show'
   post 'fruit/create'
   get 'fruit/new'
   get 'fruit/edit'
@@ -25,7 +24,6 @@ Rails.application.routes.draw do
   get 'fruit/destroy'
 
   get 'vegetable/list'
-  get 'vegetable/show'
   post 'vegetable/create'
   get 'vegetable/new'
   patch 'vegetable/update'
